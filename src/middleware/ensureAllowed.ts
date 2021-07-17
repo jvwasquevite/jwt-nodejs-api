@@ -2,11 +2,11 @@ import { Request, Response, NextFunction } from 'express'
 import { UsersRepositories } from '../repositories/UsersRepositories'
 import { getCustomRepository } from 'typeorm'
 
-import { ensureAdmin } from './ensureAdmin'
-
 /**
  * Allows logged users to delete or update yourselves
  * Allows admin users to delete or update other users
+ *
+ * @author João Wasquevite
  */
 
 export async function ensureAllowed(

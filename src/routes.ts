@@ -16,6 +16,8 @@ import { ListUsersController } from './controllers/ListUsersController'
 
 import { DeleteUserController } from './controllers/DeleteUserController'
 
+import { UpdateUserController } from './controllers/UpdateUserController'
+
 const router = Router()
 
 // Instancia os controllers
@@ -33,6 +35,8 @@ const listUsersController = new ListUsersController()
 
 const deleteUserController = new DeleteUserController()
 
+const updateUserController = new UpdateUserController()
+
 // Cria as requisições passando as informações para o controller
 router.get('/users', ensureAuthenticated, listUsersController.handle)
 router.post('/users', createUserController.handle)
@@ -41,6 +45,12 @@ router.delete(
   ensureAuthenticated,
   ensureAllowed,
   deleteUserController.handle
+)
+router.put(
+  '/users/:id',
+  ensureAuthenticated,
+  ensureAllowed,
+  updateUserController.handle
 )
 
 router.get('/tags', ensureAuthenticated, listTagsController.handle)

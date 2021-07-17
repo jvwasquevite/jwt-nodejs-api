@@ -9,14 +9,13 @@
 
 - ~~O usuário precisa estar autenticado na aplicação~~
 - ~~O usuário precisa existir no banco de dados~~
-- Apenas o usuário ou admins podem deletar um usuário
+- ~~Apenas o usuário ou admins podem deletar um usuário~~
 
 ### Update user
 
 - ~~O usuário precisa estar autenticado na aplicação~~
-- Apenas o usuário ou admins podem atualizar seus dados
-- Apenas admins podem atualizar a coluna admin
-- Não é permitido alterar a senha por essa requisição
+- ~~Apenas o usuário ou admins podem atualizar seus dados~~
+- ~~Não é permitido alterar a senha por essa requisição~~
 
 ### Update password
 

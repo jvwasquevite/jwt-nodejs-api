@@ -1,34 +1,45 @@
 import { getCustomRepository } from 'typeorm'
 import { UsersRepositories } from '../repositories/UsersRepositories'
+import { classToPlain } from 'class-transformer'
+
+/**
+ * Receive needed request data from controller layer
+ * Implements needed use cases rules with error handling
+ * Returns validated data
+ *
+ * @param logged_user_id        logged user id from controller
+ * @param id                    user to update id from controller
+ * @params name, email, admin   request body from controller
+ *
+ * @author João Wasquevite
+ */
 
 interface IUserRequest {
-  user_id: string
+  id: string
   name: string
   email: string
-  admin: boolean
+  admin?: boolean
 }
 
 class UpdateUserService {
-  async execute({ user_id, name, email, admin }: IUserRequest) {
+  async execute({ id, name, email, admin }: IUserRequest) {
     const usersRepositories = getCustomRepository(UsersRepositories)
 
-    const userExists = await usersRepositories.findOne({
-      id: user_id,
-    })
+    const userExists = await usersRepositories.findOne(id)
 
     if (!userExists) {
       throw new Error('User does not exist!')
     }
 
-    const userIsTheSame = await usersRepositories.findOne({})
-
-    const user = usersRepositories.update(user_id, {
+    await usersRepositories.update(id, {
       name,
       email,
       admin,
     })
 
-    return user
+    const user = await usersRepositories.findOne(id)
+
+    return classToPlain(user)
   }
 }
 
