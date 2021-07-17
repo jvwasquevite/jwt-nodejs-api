@@ -122,7 +122,7 @@ Distributed under the MIT License.
 
 * How to authenticate routes using middlewares and JSONWebToken
 * How to make a layered architecture besides MVC pattern
-* How to create [use case diagrams](https://en.wikipedia.org/wiki/Use_case_diagram) to structure projets 
+* How to create [use case diagrams](https://en.wikipedia.org/wiki/Use_case_diagram) to structure projects 
 * How to use Oriented Programming on Node.js APIs
 
 ## Get in touch with me
