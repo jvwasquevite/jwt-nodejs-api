@@ -10,7 +10,7 @@ export function ensureAuthenticated(
   response: Response,
   next: NextFunction
 ) {
-  // Recebe o token pela header da request
+  // Recebe o token Bearer pela header da request
   const authToken = request.headers.authorization
 
   // Valida se token está preenchido
@@ -29,7 +29,7 @@ export function ensureAuthenticated(
     ) as IPayload
 
     // Recuperar informações do usuário
-    request.user_id = sub
+    request.logged_user_id = sub
 
     return next()
   } catch (err) {

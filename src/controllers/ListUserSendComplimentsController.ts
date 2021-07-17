@@ -3,11 +3,13 @@ import { ListUserSendComplimentsService } from '../services/ListUserSendComplime
 
 class ListUserSendComplimentsController {
   async handle(request: Request, response: Response) {
-    const { user_id } = request
+    const { logged_user_id } = request
 
     const listUserSendComplimentsService = new ListUserSendComplimentsService()
 
-    const compliments = await listUserSendComplimentsService.execute(user_id)
+    const compliments = await listUserSendComplimentsService.execute(
+      logged_user_id
+    )
 
     return response.json(compliments)
   }

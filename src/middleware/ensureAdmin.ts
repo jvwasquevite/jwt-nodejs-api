@@ -8,10 +8,10 @@ export async function ensureAdmin(
   next: NextFunction
 ) {
   // Verifica se o usuário é admin
-  const { user_id } = request
+  const { logged_user_id } = request
 
   const usersRepositories = getCustomRepository(UsersRepositories)
-  const { admin } = await usersRepositories.findOne(user_id)
+  const { admin } = await usersRepositories.findOne(logged_user_id)
 
   // Caso ele seja administrador, ele passa para a próxima camada
   if (admin) {
