@@ -17,6 +17,7 @@ import { ListUsersController } from './controllers/ListUsersController'
 import { DeleteUserController } from './controllers/DeleteUserController'
 
 import { UpdateUserController } from './controllers/UpdateUserController'
+import { ForgotPasswordController } from './controllers/ForgotPasswordController'
 
 const router = Router()
 
@@ -37,21 +38,38 @@ const deleteUserController = new DeleteUserController()
 
 const updateUserController = new UpdateUserController()
 
-// Cria as requisições passando as informações para o controller
-router.get('/users', ensureAuthenticated, listUsersController.handle)
+const forgotPasswordController = new ForgotPasswordController()
+
+/**
+ * Routes to create, read, update and delete users
+ *
+ * @POST '/users'       create a new member
+ * @GET '/users'        read all members
+ * @PUT '/users/id'     update a specific member
+ * @DELETE '/uses/id'   delete a specific member
+ */
+
 router.post('/users', createUserController.handle)
-router.delete(
-  '/users/:id',
-  ensureAuthenticated,
-  ensureAllowed,
-  deleteUserController.handle
-)
+router.get('/users', ensureAuthenticated, listUsersController.handle)
 router.put(
   '/users/:id',
   ensureAuthenticated,
   ensureAllowed,
   updateUserController.handle
 )
+router.delete(
+  '/users/:id',
+  ensureAuthenticated,
+  ensureAllowed,
+  deleteUserController.handle
+)
+
+/**
+ * Routes to reset password
+ *
+ * @POST '/forgot'     generates a new token and send it to email
+ */
+router.post('/forgot', forgotPasswordController.handle)
 
 router.get('/tags', ensureAuthenticated, listTagsController.handle)
 router.post(
