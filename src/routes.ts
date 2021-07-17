@@ -5,6 +5,7 @@ import { CreateComplimentController } from './controllers/CreateComplimentContol
 
 import { ensureAuthenticated } from './middleware/ensureAuthenticated'
 import { ensureAdmin } from './middleware/ensureAdmin'
+import { ensureAllowed } from './middleware/ensureAllowed'
 
 import { AuthenticateUserController } from './controllers/AuthenticateUserController'
 
@@ -38,9 +39,10 @@ router.post('/users', createUserController.handle)
 router.delete(
   '/users/:id',
   ensureAuthenticated,
-  ensureAdmin,
+  ensureAllowed,
   deleteUserController.handle
 )
+
 router.get('/tags', ensureAuthenticated, listTagsController.handle)
 router.post(
   '/tags',
