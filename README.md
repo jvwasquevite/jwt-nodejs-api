@@ -1,8 +1,8 @@
 <!-- 
 Internal variables: 
 `jvwasquevite`,
-`nlw06-nodejs`,
-`NLW Valoriza`,
+`jwt-nodejs-api`,
+`JWT Node.js API`,
 `Simple node.js API with authentication`,
 `https://jvwasquevite.notion.site/NLW06-mission-nodeJS-51a92b212f6d4c958cab2fcf1edbc9f9`,
 `demo_url`,
@@ -13,21 +13,21 @@ Internal variables:
 
 <br />
 <p align="center">
-  <a href="https://github.com/jvwasquevite/nlw06-nodejs">
+  <a href="https://github.com/jvwasquevite/jwt-nodejs-api">
     <img src="https://raw.githubusercontent.com/jvwasquevite/readme/main/logo.png?token=AMCADBC6EWPA6XJUKSPKSHLA7FU6W" alt="Logo">
   </a>
 
-  <h3 align="center">NLW Valoriza</h3>
+  <h3 align="center">JWT Node.js API</h3>
 
   <p align="center">
-    Simple node.js API with authentication
+    Simple Node.js API with authentication
     <br />
     <a href="https://jvwasquevite.notion.site/NLW06-mission-nodeJS-51a92b212f6d4c958cab2fcf1edbc9f9"><strong>Explore documentation »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jvwasquevite/nlw06-nodejs/issues">Report Bug</a>
+    <a href="https://github.com/jvwasquevite/jwt-nodejs-api/issues">Report Bug</a>
     ·
-    <a href="https://github.com/jvwasquevite/nlw06-nodejs/issues">Request Feature</a>
+    <a href="https://github.com/jvwasquevite/jwt-nodejs-api/issues">Request Feature</a>
     ·
     <a href="https://github.com/jvwasquevite?tab=repositories">More Projects</a>
   </p>
@@ -35,17 +35,17 @@ Internal variables:
 
 <!-- made at screely.com, with: shadow on, plain regular window, no background, and 80x100px padding -->
 <p align="center">
-<img src="https://raw.githubusercontent.com/rocketseat-education/nlw-06-nodejs/master/.github/preview.png" alt="NLW Valoriza">
+<img src="https://raw.githubusercontent.com/rocketseat-education/nlw-06-nodejs/master/.github/preview.png" alt="JWT Node.js API">
 </p>
 
 ## About The Project
 
-This project was developed with Node.js, architectured with SOLID principles, using Typescript and JSON WebToken.
+This project was developed with [Node.js](https://nodejs.org/en/), using [TypeScript](https://www.typescriptlang.org/), [TypeORM](https://typeorm.io/#/) and [JSONWebToken](https://github.com/auth0/node-jsonwebtoken#readme).
 
 ### Built With
 
 * [Express](https://expressjs.com/pt-br/)
-* [Typescript](https://www.typescriptlang.org/)
+* [TypeScript](https://www.typescriptlang.org/)
 * [TypeORM](https://typeorm.io/#/)
 * [JSONWebToken](https://github.com/auth0/node-jsonwebtoken#readme)
 
@@ -56,7 +56,7 @@ This project was developed with Node.js, architectured with SOLID principles, us
 
 ### More Information
 
-* This project was developed during Next Level Week 06 by [@rocketseat-education](https://github.com/rocketseat-education/). Other features has been made by me.
+This project was developed during Next Level Week 06 by [@rocketseat-education](https://github.com/rocketseat-education/). Additional features has been made by me.
 
 ### Directory Structure
 
@@ -88,7 +88,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone this repository:
    ```sh
-   git clone https://github.com/jvwasquevite/nlw06-nodejs.git
+   git clone https://github.com/jvwasquevite/jwt-nodejs-api.git
    ```
 2. Install packages with Yarn:
    ```sh
@@ -120,9 +120,9 @@ Distributed under the MIT License.
 
 ## Acknowledgements
 
-* How to authenticate routes using JSONWebToken
+* How to authenticate routes using middlewares and JSONWebToken
 * How to make a layered architecture besides MVC pattern
-* How to create use cases diagrams to structure projets 
+* How to create [use case diagrams](https://en.wikipedia.org/wiki/Use_case_diagram) to structure projets 
 * How to use Oriented Programming on Node.js APIs
 
 ## Get in touch with me
