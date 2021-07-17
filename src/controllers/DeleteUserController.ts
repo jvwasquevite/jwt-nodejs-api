@@ -9,8 +9,8 @@ class DeleteUserController {
 
     await deleteUserService.execute(id)
 
-    return response.status(204).json({
-      message: 'Successfuly deleted',
+    return response.status(200).json({
+      message: 'Successfully deleted',
     })
   }
 }
