@@ -19,6 +19,9 @@ import { DeleteUserController } from './controllers/DeleteUserController'
 import { UpdateUserController } from './controllers/UpdateUserController'
 import { ForgotPasswordController } from './controllers/ForgotPasswordController'
 
+import { validateToken } from './middleware/validateToken'
+import { ResetPasswordController } from './controllers/ResetPasswordController'
+
 const router = Router()
 
 // Instancia os controllers
@@ -39,6 +42,7 @@ const deleteUserController = new DeleteUserController()
 const updateUserController = new UpdateUserController()
 
 const forgotPasswordController = new ForgotPasswordController()
+const resetPasswordController = new ResetPasswordController()
 
 /**
  * Routes to create, read, update and delete users
@@ -67,9 +71,13 @@ router.delete(
 /**
  * Routes to reset password
  *
- * @POST '/forgot'     generates a new token and send it to email
+ * @POST '/forgot'          generates a new token and send it to email
+ * @POST '/reset/:token'    reset password with generated token
+ * @POST '/reset'           reset password being authenticated
  */
+
 router.post('/forgot', forgotPasswordController.handle)
+router.post('/reset/:token', validateToken, resetPasswordController.handle)
 
 router.get('/tags', ensureAuthenticated, listTagsController.handle)
 router.post(

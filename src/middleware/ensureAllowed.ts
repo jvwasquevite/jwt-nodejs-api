@@ -15,12 +15,12 @@ export async function ensureAllowed(
   next: NextFunction
 ) {
   const { id } = request.params
-  const { logged_user_id } = request
+  const { user_id } = request
 
   const usersRepositories = getCustomRepository(UsersRepositories)
-  const { admin } = await usersRepositories.findOne(logged_user_id)
+  const { admin } = await usersRepositories.findOne(user_id)
 
-  if (id === logged_user_id) {
+  if (id === user_id) {
     return next()
   } else if (admin) {
     return next()

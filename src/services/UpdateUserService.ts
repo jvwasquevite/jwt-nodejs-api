@@ -7,7 +7,7 @@ import { classToPlain } from 'class-transformer'
  * Implements needed use cases rules with error handling
  * Returns validated data
  *
- * @param logged_user_id        logged user id from controller
+ * @param user_id        logged user id from controller
  * @param id                    user to update id from controller
  * @params name, email, admin   request body from controller
  *

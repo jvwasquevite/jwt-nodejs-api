@@ -7,7 +7,9 @@ import { Mailtrap } from '../providers/Mailtrap'
 /**
  * Receive needed request data from controller layer
  * Implements needed use cases rules with error handling
- * Returns validated data
+ * Generates new token to reset password
+ * Send token to user email
+ * Returns token
  *
  * @param email    email from account to reset password
  *
