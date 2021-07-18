@@ -1,16 +1,3 @@
-<!-- 
-Internal variables: 
-`jvwasquevite`,
-`jwt-nodejs-api`,
-`JWT Node.js API`,
-`Simple node.js API with authentication`,
-`https://jvwasquevite.notion.site/NLW06-mission-nodeJS-51a92b212f6d4c958cab2fcf1edbc9f9`,
-`demo_url`,
-`https://raw.githubusercontent.com/rocketseat-education/nlw-06-nodejs/master/.github/preview.png`,
-`Node.js`,
-`project_info`
--->
-
 <br />
 <p align="center">
   <a href="https://github.com/jvwasquevite/jwt-nodejs-api">
@@ -52,11 +39,11 @@ This project was developed with [Node.js](https://nodejs.org/en/), using [TypeSc
 ### Main Features
 
 * Routers authentication with JSON WebToken
-* Project layered architectured, based on SOLID principles from Clean Architecture
+* Project layered architectured
 
 ### More Information
 
-This project was developed during Next Level Week 06 by [@rocketseat-education](https://github.com/rocketseat-education/). Additional features has been made by me.
+This project was developed during Next Level Week 06 by [@rocketseat-education](https://github.com/rocketseat-education/). [Additional features](#additional-features) has been made by me.
 
 ### Directory Structure
 
@@ -118,12 +105,26 @@ These instructions will get you a copy of the project up and running on your loc
 
 Distributed under the MIT License.
 
+<h2 id="additional-features">Additional features</h2>
+
+* Created additional routes to delete and updated an user
+* Created additional routes to forgot password, with [single use JWT token](https://www.jbspeakr.cc/howto-single-use-jwt/) sended on email
+* Created additional [user cases](https://github.com/jvwasquevite/jwt-nodejs-api/blob/master/user-cases.md)
+* Implemented dotenv to hide sensible variables
+
+
 ## Acknowledgements
 
 * How to authenticate routes using middlewares and JSONWebToken
-* How to make a layered architecture besides MVC pattern
+* How to make a layered architecture besides simple MVC pattern
 * How to create [use case diagrams](https://en.wikipedia.org/wiki/Use_case_diagram) to structure projects 
-* How to use Oriented Programming on Node.js APIs
+* How to use Oriented Object Programming principles on Node.js APIs
+
+## Future implementations
+
+- [ ] Deploy project on Heroku
+- [ ] Achitecture refactoring using use cases with [package by feature](https://phauer.com/2020/package-by-feature/) structure
+- [ ] Creates custom class for error handling
 
 ## Get in touch with me
 
