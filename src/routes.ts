@@ -72,12 +72,13 @@ router.delete(
  * Routes to reset password
  *
  * @POST '/forgot'          generates a new token and send it to email
- * @POST '/reset/:token'    reset password with generated token
- * @POST '/reset'           reset password being authenticated
+ * @POST '/reset/:token'    reset password by generated token
+ * @POST '/reset'           reset password by authentication
  */
 
 router.post('/forgot', forgotPasswordController.handle)
 router.post('/reset/:token', validateToken, resetPasswordController.handle)
+router.post('/reset', ensureAuthenticated, resetPasswordController.handle)
 
 router.get('/tags', ensureAuthenticated, listTagsController.handle)
 router.post(

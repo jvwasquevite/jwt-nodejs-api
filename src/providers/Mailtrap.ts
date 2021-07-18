@@ -19,8 +19,8 @@ export class Mailtrap {
     await this.transporter.sendMail({
       from: 'app@nlwvaloriza.com',
       to: email,
-      subject: 'Alteração de senha',
-      text: `Seu token: ${token}`,
+      subject: 'Password reset request',
+      html: `<h3>Your token has arrived!</h3><p>${token}</p><span>Valid for single use.<span>`,
     })
   }
 }

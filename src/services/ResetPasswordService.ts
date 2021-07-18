@@ -33,6 +33,12 @@ class ResetPasswordService {
       throw new Error('Passwords does not match')
     }
 
+    /**
+     * Changing user password hash
+     * makes JWT token invalid after a
+     * successful password reset
+     */
+
     const passwordHash = await hash(password, 8)
 
     await usersRepositories.update(id, {

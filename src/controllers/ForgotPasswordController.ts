@@ -14,9 +14,11 @@ class ForgotPasswordController {
     const { email } = request.body
 
     const forgotPasswordService = new ForgotPasswordService()
-    const token = await forgotPasswordService.execute(email)
+    await forgotPasswordService.execute(email)
 
-    return response.json(token)
+    return response.status(200).json({
+      message: `Token successfully sent to ${email}`,
+    })
   }
 }
 

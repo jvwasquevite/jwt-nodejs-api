@@ -26,11 +26,16 @@ class ForgotPasswordService {
       throw new Error('User does not exist!')
     }
 
+    /**
+     * Generates token based on user password hash
+     * to implement single use token
+     */
+
     const token = sign(
       {
         email: user.email,
       },
-      '4f93ac9d10cb751b8c9c646bc9dbccb9',
+      user.password,
       {
         subject: user.id,
         expiresIn: '1d',
@@ -40,8 +45,6 @@ class ForgotPasswordService {
     const mailtrap = new Mailtrap()
 
     await mailtrap.sendEmail(email, token)
-
-    return token
   }
 }
 
