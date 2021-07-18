@@ -6,11 +6,11 @@ export class Mailtrap {
 
   constructor() {
     this.transporter = nodemailer.createTransport({
-      host: 'smtp.mailtrap.io',
-      port: 2525,
+      host: process.env.HOST,
+      port: process.env.PORT,
       auth: {
-        user: '4d27ebf54b2b8b',
-        pass: '666d3586155e9d',
+        user: process.env.AUTH_USER,
+        pass: process.env.AUTH_PASS,
       },
     })
   }

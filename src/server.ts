@@ -2,11 +2,15 @@ import 'reflect-metadata'
 import express, { Request, Response, NextFunction } from 'express'
 import 'express-async-errors'
 import { router } from './routes'
+import * as dotenv from 'dotenv'
 
 import './database'
 
 const app = express()
 app.use(express.json())
+
+// Dotenv config
+dotenv.config({ path: __dirname + '/.env' })
 
 // Middleware usado para inserir a rota no express
 app.use(router)
