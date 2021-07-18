@@ -17,11 +17,17 @@
 - ~~Apenas o usuário ou admins podem atualizar seus dados~~
 - ~~Não é permitido alterar a senha por essa requisição~~
 
-### Update password
+### Forgot password
 
-- O usuário precisa estar autenticado na aplicação
-- Apenas o usuário pode alterar sua senha
-- A alteração de senha só pode ser finalizada por meio da geração e autenticação de um token via query param
+- ~~O usuário precisa informar um email que esteja cadastrado na aplicação~~
+- ~~A alteração de senha só pode ser finalizada por meio da geração e autenticação de um token via route param~~
+- ~~O token de troca de senha deverá ser enviado para o email informado~~
+- ~~O token deverá ser invalidado após o uso para a troca de senha~~
+
+### Reset password
+
+- ~~O usuário precisa estar autenticado na aplicação~~
+- ~~Apenas o próprio usuário pode alterar sua senha~~
 
 ### Create tag
 
