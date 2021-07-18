@@ -2,12 +2,6 @@ import { getCustomRepository } from 'typeorm'
 import { UsersRepositories } from '../repositories/UsersRepositories'
 import { hash } from 'bcryptjs'
 
-interface IResetPassword {
-  id: string
-  password: string
-  confirmPassword: string
-}
-
 /**
  * Receive needed request data from controller layer
  * Implements needed use cases rules with error handling
@@ -18,6 +12,12 @@ interface IResetPassword {
  *
  * @author João Wasquevite
  */
+
+interface IResetPassword {
+  id: string
+  password: string
+  confirmPassword: string
+}
 
 class ResetPasswordService {
   async execute({ id, password, confirmPassword }: IResetPassword) {

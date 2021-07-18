@@ -1,6 +1,13 @@
 import { getCustomRepository } from 'typeorm'
 import { UsersRepositories } from '../repositories/UsersRepositories'
 
+/**
+ * Receive needed request data from controller layer
+ * Delete entity query with delete() from custom repository
+ *
+ * @author João Wasquevite
+ */
+
 class DeleteUserService {
   async execute(id: string) {
     const usersRepositories = getCustomRepository(UsersRepositories)

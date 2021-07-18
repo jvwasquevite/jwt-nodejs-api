@@ -9,6 +9,14 @@ import { v4 as uuid } from 'uuid'
 
 import { Exclude } from 'class-transformer'
 
+/**
+ * Creates new entity to represent User table
+ * Exclude password column to hide from GET request
+ * Generates primary key using uuid
+ *
+ * @author João Wasquevite
+ */
+
 @Entity('users')
 class User {
   @PrimaryColumn()

@@ -24,7 +24,6 @@ import { ResetPasswordController } from './controllers/ResetPasswordController'
 
 const router = Router()
 
-// Instancia os controllers
 const createUserController = new CreateUserController()
 const createTagController = new CreateTagController()
 const authenticateUserController = new AuthenticateUserController()
@@ -80,13 +79,28 @@ router.post('/forgot', forgotPasswordController.handle)
 router.post('/reset/:token', validateToken, resetPasswordController.handle)
 router.post('/reset', ensureAuthenticated, resetPasswordController.handle)
 
-router.get('/tags', ensureAuthenticated, listTagsController.handle)
+/**
+ * Routes to create and read tags
+ *
+ * @POST '/tags'       create a new tag
+ * @GET '/tags'        read all tags
+ */
+
 router.post(
   '/tags',
   ensureAuthenticated,
   ensureAdmin,
   createTagController.handle
 )
+router.get('/tags', ensureAuthenticated, listTagsController.handle)
+
+/**
+ * Routes to create and read sended and received compliments
+ *
+ * @POST '/compliments'                 create a new compliment
+ * @GET '/users/compliments/send'       read all sended compliments
+ * @GET '/users/compliments/receive'    read all received compliments
+ */
 
 router.post(
   '/compliments',
@@ -103,6 +117,12 @@ router.get(
   ensureAuthenticated,
   listUserReceiveComplimentsController.handle
 )
+
+/**
+ * Route to authenticate private routes
+ *
+ * @POST '/login'     authentication by email and password verification
+ */
 
 router.post('/login', authenticateUserController.handle)
 

@@ -1,6 +1,14 @@
 import { Request, Response } from 'express'
 import { ListUserSendComplimentsService } from '../services/ListUserSendComplimentsService'
 
+/**
+ * Receive request and response from route layer
+ * Pass needed request data to service layer
+ * Returns sent compliments list
+ *
+ * @author João Wasquevite
+ */
+
 class ListUserSendComplimentsController {
   async handle(request: Request, response: Response) {
     const { user_id } = request

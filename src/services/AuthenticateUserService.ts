@@ -4,6 +4,18 @@ import { sign } from 'jsonwebtoken'
 
 import { UsersRepositories } from '../repositories/UsersRepositories'
 
+/**
+ * Receive needed request data from controller layer
+ * Verifies if user exists
+ * Verifies if password is correct with bycript compare()
+ * Generates new JWT auth token
+ * Returns token to store on frontend side
+ *
+ * @params email, password   request body from controller
+ *
+ * @author João Wasquevite
+ */
+
 interface IAuthenticateRequest {
   email: string
   password: string
@@ -13,7 +25,6 @@ class AuthenticateUserService {
   async execute({ email, password }: IAuthenticateRequest) {
     const usersRepositories = getCustomRepository(UsersRepositories)
 
-    // 1. Verifica se o email existe
     const user = await usersRepositories.findOne({
       email,
     })
@@ -22,14 +33,12 @@ class AuthenticateUserService {
       throw new Error('Email/Password incorrect')
     }
 
-    // 2. Verifica se senha está correta com o compare() do bcrypt
     const passwordMatch = await compare(password, user.password)
 
     if (!passwordMatch) {
       throw new Error('Email/Password incorrect')
     }
 
-    // 3. Gera o token com o sign do JWT
     const token = sign(
       {
         email: user.email,

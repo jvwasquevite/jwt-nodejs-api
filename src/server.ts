@@ -6,19 +6,22 @@ import * as dotenv from 'dotenv'
 
 import './database'
 
+// Initializating express to work with JSON
 const app = express()
 app.use(express.json())
 
-// Dotenv config
+// Dotenv default config
 dotenv.config({ path: __dirname + '/.env' })
 
-// Middleware usado para inserir a rota no express
+// Middleware to insert routes
 app.use(router)
 
-// Middleware de tratamento de erro
+/**
+ * Middleware for error handling
+ * Verifies if it's a custom throwed error or a internal server one
+ */
 app.use(
   (err: Error, request: Request, response: Response, next: NextFunction) => {
-    // Verifica se é do tipo do erro que foi lançado ou não
     if (err instanceof Error) {
       return response.status(400).json({
         error: err.message,

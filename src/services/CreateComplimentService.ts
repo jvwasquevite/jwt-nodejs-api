@@ -2,6 +2,15 @@ import { getCustomRepository } from 'typeorm'
 import { ComplimentsRepositories } from '../repositories/ComplimentsRepositories'
 import { UsersRepositories } from '../repositories/UsersRepositories'
 
+/**
+ * Receive needed request data from controller layer
+ * Creates a new entity with create() method from custom repository
+ * Saves the new entity on database with save() mathod from custom repository
+ * Returns created compliment
+ *
+ * @author João Wasquevite
+ */
+
 interface IComplimentRequest {
   tag_id: string
   user_sender: string

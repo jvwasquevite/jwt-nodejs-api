@@ -1,6 +1,15 @@
 import { getCustomRepository } from 'typeorm'
 import { TagsRepositories } from '../repositories/TagsRepositories'
 
+/**
+ * Receive needed request data from controller layer
+ * Creates a new entity with create() method from custom repository
+ * Saves the new entity on database with save() mathod from custom repository
+ * Returns created tag
+ *
+ * @author João Wasquevite
+ */
+
 class CreateTagService {
   async execute(name: string) {
     const tagsRepository = getCustomRepository(TagsRepositories)
@@ -10,7 +19,6 @@ class CreateTagService {
     }
 
     // SELECT * FROM TAGS WHERE NAME = 'name'
-    // Usa o await para aguardar a busca ser realizada no banco de dados
     const tagAlreadyExists = await tagsRepository.findOne({
       name,
     })

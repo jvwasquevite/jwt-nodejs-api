@@ -10,6 +10,14 @@ import { v4 as uuid } from 'uuid'
 import { Tag } from './Tag'
 import { User } from './User'
 
+/**
+ * Creates new entity to represent Compliments table
+ * Creates many to one relation with User and Tag entities usign foreign keys
+ * Generates primary key using uuid
+ *
+ * @author João Wasquevite
+ */
+
 @Entity('compliments')
 class Compliment {
   @PrimaryColumn()

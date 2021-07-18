@@ -9,6 +9,14 @@ import { v4 as uuid } from 'uuid'
 
 import { Expose } from 'class-transformer'
 
+/**
+ * Creates new entity to represent Tags table
+ * Manipulates how data will be saved on database using Expose
+ * Generates primary key using uuid
+ *
+ * @author João Wasquevite
+ */
+
 @Entity('tags')
 class Tag {
   @PrimaryColumn()

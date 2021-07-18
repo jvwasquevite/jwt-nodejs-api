@@ -1,6 +1,13 @@
 import nodemailer from 'nodemailer'
 import Mail from 'nodemailer/lib/mailer'
 
+/**
+ * Connects with Mailtrap sendbox service using dotenv
+ * Send email method used on forgot password POST request
+ *
+ * @author João Wasquevite
+ */
+
 export class Mailtrap {
   private transporter: Mail
 
