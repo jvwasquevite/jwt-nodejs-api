@@ -122,9 +122,11 @@ Distributed under the MIT License.
 
 ## Future implementations
 
-- [ ] Deploy project on Heroku
+- [ ] Deploy project on Heroku, AWS or Digital Ocean
 - [ ] Achitecture refactoring using use cases with [package by feature](https://phauer.com/2020/package-by-feature/) structure
-- [ ] Creates custom class for error handling
+- [ ] Create custom classes for error handling
+- [ ] Create email notifications for compliments
+- [ ] Implement automatic testing
 
 ## Get in touch with me
 
